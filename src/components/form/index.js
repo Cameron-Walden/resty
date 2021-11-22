@@ -57,7 +57,7 @@ const Form = (props) => {
 
   const handleUrl = e => {
     e.preventDefault();
-    setUrl(e.targ.value);
+    setUrl(e.target.value);
   }
 
   return (
@@ -78,6 +78,5 @@ const Form = (props) => {
     </>
   );
 }
-
 
 export default Form;
