@@ -1,4 +1,4 @@
-$backgroundColor: #f5f5f5;
+$backgroundColor: blanchedalmond;
 
 html, body {
   height: 100%;
@@ -16,19 +16,33 @@ body {
     height: 100%;
   }
 
-  footer {
-    background: darken($backgroundColor, 50);
-    border-top: 1px solid #eee;
-    padding: 1em 3em;
-    margin: 0;
-  }
-
   header {
-    background: darken($backgroundColor, 75);
-    border-bottom: 1px solid #eee;
+    background: gray;
+    border-bottom: 1px solid black;
     color: #eee;
     padding: 0;
     margin: 0;
     text-align: center;
+    // h1{
+    //   color: whitesmoke;
+    // }
   }
+
+  footer {
+    background: gray;
+    border-top: 1px solid rgb(172, 180, 172);
+    padding: 1em 3em;
+    margin: 0;
+    text-align: center;
+  }
+
+  #get, #post, #put, #delete {
+    background: rgb(166, 196, 178);
+    box-shadow: 5px 10px 15px black;
+    border-radius: 100px;
+  }  
+  #get:hover, #post:hover, #put:hover, #delete:hover {
+    background: rgb(166, 196, 178);
+    transform: scale(1.1);
+  }  
 }
