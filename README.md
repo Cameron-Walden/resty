@@ -2,7 +2,7 @@
 
 ***
 
-Created by Cameorn Walden
+Created by Cameron Walden
 
 ***
 
@@ -10,7 +10,13 @@ RESTy is an API testing tool that can be run in any browser, allowing a user to 
 
 ***
 
-## Problem Domain
+## Deployed Site
 
-- **Day 1**
+https://cameron-walden-resty.netlify.app/
+
+***
+
+## UML
+
+<img src = "./img/resty1.jpg">
 
