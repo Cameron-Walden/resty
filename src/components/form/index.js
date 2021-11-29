@@ -57,18 +57,18 @@ const Form = (props) => {
     props.handleApiCall(formData);
   }
 
-  // const handleUrl = e => {
-  //   e.preventDefault();
-  //   setUrl(e.target.value);
-  // }
+  const handleUrl = e => {
+    e.preventDefault();
+    setUrl(e.target.value);
+  }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label >
           <span>URL: </span>
-          {/* <input onChange = {handleUrl} name='url' type='text' /> */}
-          <input name='url' type='text' />
+          <input onChange = {handleUrl} name='url' type='text' />
+          {/* <input name='url' type='text' /> */}
           {/* <button onClick ={handleSubmit} type="submit">GO!</button> */}
           <button type="submit">GO!</button>
         </label>
