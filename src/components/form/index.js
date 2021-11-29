@@ -39,8 +39,8 @@ const Form = (props) => {
   // console.log(props, 'THIS IS PROPS IN FORM');
 
   const [method, setMethod] = useState('');
-  const [url, setUrl] = useState('');
-  const [requestData, setRequestData] = useState({});
+  const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon');
+  // const [requestData, setRequestData] = useState({});
   
   const handleMethod = e => {
     e.preventDefault();
@@ -49,13 +49,13 @@ const Form = (props) => {
   
   const handleSubmit = e => {
     e.preventDefault();
-    const jsonString = e.target.json.value
+    // const jsonString = e.target.json.value
     const formData = {
       // method:'GET',
       // url: 'https://pokeapi.co/api/v2/pokemon',
       method: method,
       url: url,
-      body: JSON.parse(jsonString)
+      // body: JSON.parse(jsonString)
     };
     props.handleApiCall(formData);
   }
@@ -81,7 +81,7 @@ const Form = (props) => {
           <span id="put">PUT</span>
           <span id="delete">DELETE</span>
         </label>
-        <textarea name ="json"/>
+        {/* <textarea name ="json"/> */}
       </form>
     </>
   );
