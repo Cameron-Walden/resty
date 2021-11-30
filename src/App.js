@@ -23,7 +23,7 @@ const App = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, [requestParams.url, results]);
 
   const callApi = async (apiParams) => {
     const apiUrl = apiParams.url;
