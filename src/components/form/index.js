@@ -4,7 +4,7 @@ import './form.scss';
 const Form = (props) => {
   const [method, setMethod] = useState('');
   const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon');
-  // const [requestData, setRequestData] = useState({});
+  // const [requestData, setRequestData] = useState('');
   
   const handleMethod = e => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const Form = (props) => {
       // url: 'https://pokeapi.co/api/v2/pokemon',
       method: method,
       url: url,
-      // body: JSON.parse(jsonString),
+      // body: JSON.parse(requestData),
     };
     props.handleApiCall(formData);
   }
@@ -28,7 +28,7 @@ const Form = (props) => {
     e.preventDefault();
     setUrl(e.target.value);
   }
-
+  
   return (
     <>
       <form onSubmit={handleSubmit}>
