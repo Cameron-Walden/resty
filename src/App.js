@@ -8,18 +8,23 @@ import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
 
-  class App extends React.Component {
+  function App() {
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        data: null,
-        requestParams: {},
-      };
-    }
+    const [data, setData] = useState(null);
+    const [requestParams, setRequestParams] = useState({})
+
+    // useEffect(() => {
+    //   const apiUrl = requestParams.url;
+    //   axios.get(apiUrl)
+    //   .then(response => {
+    //     setResults(response.data)
+    //   }).catch(error => {
+    //     console.log(error);
+    //   })
+    // }, []);
     
-    callApi = async (requestParams) => {
-      const apiUrl = requestParams.url;
+    const callApi = async (apiParams) => {
+      const apiUrl = apiParams.url;
       const response = await axios.get(apiUrl);
   
       const data = {
@@ -27,60 +32,21 @@ import Results from './components/results';
         count: response.data.count,
         Response: response.data.results
       };
-      this.setState({data, requestParams});
+      setData(data);
+      setRequestParams({...requestParams, ...apiParams})
     }
-  
-    render() {
+
       return (
         <React.Fragment>
           <Header />
-          <Form handleApiCall={this.callApi}/>
-          <div id='requestMethod'>Request Method: {this.state.requestParams.method}</div>
-          <div id='url'>URL: {this.state.requestParams.url}</div>
-          <Results data={this.state.data} />
+          <Form handleApiCall={callApi}/>
+          <div id='requestMethod'>Request Method: {requestParams.method}</div>
+          <div id='url'>URL: {requestParams.url}</div>
+          <Results data={data} />
           <Footer />
         </React.Fragment>
       );
     }
-  }
-
-  // const App = () => {
-
-  // constructor(props) {
-  //   super(props);
-    // this.state = {
-    //   data: null,
-    //   requestParams: {},
-    // };
-    // const [data, setData] = useState(null);
-    // const [requestParams, setRequestParams] = useState({});
-
-  
-  // const callApi = (reqParams) => {
-  //   const apiData = {
-  //     count: 2,
-  //     results: [
-  //       {name: 'fake thing 1', url: 'http://fakethings.com/1'},
-  //       {name: 'fake thing 2', url: 'http://fakethings.com/2'},
-  //     ],
-  //   };
-  //   // this.setState({data, requestParams});
-  //   setData(apiData);
-  //   setRequestParams(reqParams); 
-  // }
 
 
-  //   return (
-  //     <React.Fragment>
-  //       <Header />
-  //       <div>Request Method: {requestParams.method}</div>
-  //       <div>URL: {requestParams.url}</div>
-  //       <Form handleApiCall={callApi} />
-  //       <Results data={data} />
-  //       <Footer />
-  //     </React.Fragment>
-  //   );
-  // }
-
-  
 export default App;
