@@ -20,7 +20,7 @@ const Form = (props) => {
       method: method,
       url: url,
     };
-    props.handleApiCall(formData);
+    props.handleApiCall(formData, requestBody);
   }
 
   const handleUrl = e => {
